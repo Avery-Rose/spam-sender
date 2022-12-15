@@ -5,9 +5,12 @@ keyboard = Controller()
 
 
 def send_message(message):
+    kb.focus_chat()
+    kb.press(Key.enter)
+    kb.focus_chat()
     keyboard.type(message)
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    kb.focus_chat()
+    kb.press(Key.enter)
 
 
 def send_messages(message, count, delay, counter_enabled):
