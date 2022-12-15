@@ -1,3 +1,4 @@
+import util
 from util import *
 
 
@@ -8,7 +9,7 @@ def prompt_user_send():
     counter_enabled = console.yes_or_no("Would you like to include a counter in the message?")
     if counter_enabled:
         message += " ({}/{})"
-    send_messages(message, count, delay, counter_enabled)
+    util.send_messages(message, count, delay, counter_enabled)
 
 
 def prompt_user_delete():
@@ -16,13 +17,14 @@ def prompt_user_delete():
     delay = float(input("How many seconds between each message? (minimum 0.5) "))
     if delay < 0.5:
         delay = 0.5
-    delete_messages(count, delay)
+        print("Invalid delay. Delay set to 0.5 seconds.")
+    util.delete_messages(count, delay)
 
 
 def main():
     console.clear_screen()
     while True:
-        choice = console.prompt_choice("Would you like to send or delete messages?", ["send", "delete", "exit"])
+        choice = console.prompt_choice("What would you like to do?", ["send", "delete", "exit"])
         if choice == "send":  # send
             prompt_user_send()
         elif choice == "delete":  # delete
