@@ -9,7 +9,6 @@ def press(key):
     keyboard.release(key)
 
 
-
 def hold(key):
     keyboard.press(key)
 
@@ -22,7 +21,6 @@ def focus_chat():
     hold(Key.alt)
     press("c")
     release(Key.alt)
-    time.sleep(0.1)
 
 
 def select_all():
