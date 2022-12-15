@@ -9,9 +9,6 @@ def press(key):
     keyboard.release(key)
 
 
-def type(message):
-    keyboard.type(message)
-
 
 def hold(key):
     keyboard.press(key)
